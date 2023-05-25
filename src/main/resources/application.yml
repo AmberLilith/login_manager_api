@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/login_manager?enabledTLSProtocols=TLSv1.2
+    username: root
+    password: 123
+
+token:
+  jwt:
+    SECRET: secretAmber
+    EXPIRATION: 1800
+
