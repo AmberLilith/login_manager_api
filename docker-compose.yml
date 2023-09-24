@@ -2,7 +2,7 @@ version: "3.7"
 services:
   db:
     image: mysql
-    container_name: mysql-container
+    container_name: db-mysql-container
     environment:
       MYSQL_ROOT_PASSWORD: 123
     volumes:
@@ -10,3 +10,19 @@ services:
     ports:
       - "3306:3306"
     restart: always
+    networks:
+      - minha-rede
+
+  aplicacao:
+    image: login_manager_api_image:1.0
+    container_name: login_manager_api
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    networks:
+    - minha-rede
+
+networks:
+  minha-rede:
+    driver: bridge

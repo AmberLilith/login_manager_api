@@ -3,6 +3,10 @@ spring:
     url: jdbc:mysql://localhost:3306/login_manager?enabledTLSProtocols=TLSv1.2
     username: root
     password: 123
+jpa:
+  properties:
+    hibernate:
+      dialect: org.hibernate.dialect.MySQL5Dialect
 
 token:
   jwt:

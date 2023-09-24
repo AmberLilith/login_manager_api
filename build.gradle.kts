@@ -32,6 +32,13 @@ dependencies {
 	implementation("com.auth0:java-jwt:4.4.0")
 	testImplementation("org.springframework.security:spring-security-test")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	implementation("org.springframework.boot:spring-boot-dependencies:3.0.6")
+}
+
+tasks.jar {
+	manifest {
+		attributes["Main-Class"] = "com.br.login.manager.LoginManagerApplicationKt"
+	}
 }
 
 tasks.withType<KotlinCompile> {
@@ -44,3 +51,5 @@ tasks.withType<KotlinCompile> {
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
+
+
